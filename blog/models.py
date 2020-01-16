@@ -86,6 +86,7 @@ class Post(models.Model):
     class Meta:
         verbose_name = '文章'
         verbose_name_plural = verbose_name
+        ordering = ['-created_time']  # 指定 Post 的排序方式
 
     """
     定义好 __str__ 方法后，解释器显示的内容将会是 __str__ 方法返回的内容。这里 Category 返回分类名 name ，Tag 返回标签名，而 Post 返回它的 title
