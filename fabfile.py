@@ -37,7 +37,7 @@ def deploy(c):
     with c.cd(project_root_path):
         c.run('pipenv install --deploy --ignore-pipfile')
         c.run('pipenv run python manage.py migrate')
-        c.run('pip run python collectstatic -noinput')
+        c.run('pipenv run python collectstatic --noinput')
 
     # 重新启动应用
     with c.cd(supervisor_conf_path):
