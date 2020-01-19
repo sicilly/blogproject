@@ -13,19 +13,13 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '+ued+#)24)&hv2y&l@i5do@+#!$nc)6blf5h9=mjj32bs1f_9&'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '47.96.97.78']
 
 
 
@@ -43,7 +37,7 @@ INSTALLED_APPS = [
 ]
 
 STATICFILES_URLS = [
-    os.path.join(BASE_DIR, "blog/static")
+    os.path.join(BASE_DIR, "blog/../../blog/static")
 ]
 
 MIDDLEWARE = [
@@ -63,7 +57,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # 这里 BASE_DIR 是 settings.py 在配置开头前面定义的变量，记录的是工程根目录 blogproject 的值。
         # 在这个目录下有模板文件所在的目录 templates\，于是利用os.path.join 把这两个路径连起来，构成完整的模板路径，django 就知道去这个路径下面找我们的模板了。
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [os.path.join(BASE_DIR, '../../templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -86,7 +80,7 @@ WSGI_APPLICATION = 'blogproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, '../../db.sqlite3'),
     }
 }
 
